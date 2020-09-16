@@ -1,7 +1,7 @@
 <?php
 /*Plugin Name: bS Share Buttons
-Plugin URI: https://bootscore.me/plugins/share-buttons/
-Description: Share Buttons for bootScore theme https://bootscore.me. Use Shortcode [share-buttons] to display buttons in content or widget. Use <?php echo do_shortcode("[share-buttons]"); ?&gt; to display in .php files.
+Plugin URI: https://bootscore.me/plugins/bs-share-buttons/
+Description: Share Buttons for bootScore theme https://bootscore.me. Use Shortcode [bs-share-buttons] to display buttons in content or widget. Use <?php echo do_shortcode("[bs-share-buttons]"); ?&gt; to display in .php files.
 Version: 1.0.0
 Author: Bastian Kreiter
 Author URI: https://crftwrk.de
@@ -13,13 +13,13 @@ Text Domain: bs-share-buttons
 
 
 // Register Styles and Scripts
-function share_buttons_scripts() {
+function bs_share_buttons_scripts() {
     
-    wp_register_style( 'style', plugins_url('css/style.css', __FILE__) );
-        wp_enqueue_style( 'style' );
+    wp_register_style( 'bs-share-style', plugins_url('css/bs-share-style.css', __FILE__) );
+        wp_enqueue_style( 'bs-share-style' );
     }
 
-add_action('wp_enqueue_scripts','share_buttons_scripts');
+add_action('wp_enqueue_scripts','bs_share_buttons_scripts');
 // Register Styles and Scripts End
 
 
@@ -69,7 +69,7 @@ function bs_share_buttons($content) {
         $pinterestURL = 'https://pinterest.com/pin/create/button/?url='.$bs_url.'&amp;media='.$bs_thumb[0].'&amp;description='.$bs_title;
 
         // Add sharing button at the end of page/page content
-        $content .= '<div id="share-buttons" class="mb-2">';
+        $content .= '<div id="share-buttons" class="mb-3">';
         $content .= '<a class="mb-1 btn btn-sm btn-twitter" title="Twitter" href="'. $twitterURL .'" target="_blank" rel="nofollow"><i class="fab fa-twitter"></i></a> ';
         $content .= '<a class="mb-1 btn btn-sm btn-facebook" title="Facebook" href="'.$facebookURL.'" target="_blank" rel="nofollow"><i class="fab fa-facebook-f"></i></a> ';
         $content .= '<a class="mb-1 btn btn-sm btn-whatsapp" title="Whatsapp" href="'.$whatsappURL.'" target="_blank" rel="nofollow"><i class="fab fa-whatsapp"></i></a> ';
@@ -93,4 +93,4 @@ function bs_share_buttons($content) {
 
 
 // This will create a wordpress shortcode [share-buttons].
-add_shortcode('share-buttons','bs_share_buttons');
+add_shortcode('bs-share-buttons','bs_share_buttons');

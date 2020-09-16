@@ -21,11 +21,11 @@ Displays share buttons in bootScore WordPress Theme, Copyright 2020 Bastian Krei
 
 Use shortcode to display share buttons in your post, page or widget:
 
-[share-buttons]
+[bs-share-buttons]
 
 Use shortcode to display share buttons in your .php files:
 
-<?php echo do_shortcode("[share-buttons]"); ?>
+<?php echo do_shortcode("[bs-share-buttons]"); ?>
 
 Remove buttons you do not want to display directly in main.php line 77 to 89 by deleting the respective line or override them by display: none. Use following classes:
 
